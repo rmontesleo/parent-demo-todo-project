@@ -22,8 +22,19 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <!--version>4.11</version-->
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.demo.todo.dto</groupId>
+      <artifactId>dto</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.demo.todo.model</groupId>
+      <artifactId>model</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.demo.todo.repository</groupId>
+      <artifactId>repository</artifactId>
     </dependency>
   </dependencies>
 

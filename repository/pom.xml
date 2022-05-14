@@ -29,7 +29,6 @@
     <dependency>
       <groupId>com.demo.todo.model</groupId>
       <artifactId>model</artifactId>
-      <version>1.0-SNAPSHOT</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->

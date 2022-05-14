@@ -24,6 +24,32 @@
         <version>4.13.1</version>
         <scope>test</scope>
       </dependency>
+      <dependency>
+        <groupId>com.demo.todo.dto</groupId>
+        <artifactId>dto</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>com.demo.todo.controller</groupId>
+        <artifactId>controller</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>com.demo.todo.service</groupId>
+        <artifactId>service</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>com.demo.todo.model</groupId>
+        <artifactId>model</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>com.demo.todo.repository</groupId>
+        <artifactId>repository</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+
     </dependencies>  
   </dependencyManagement>
 
