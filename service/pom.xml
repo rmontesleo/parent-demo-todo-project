@@ -27,14 +27,17 @@
     <dependency>
       <groupId>com.demo.todo.dto</groupId>
       <artifactId>dto</artifactId>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>com.demo.todo.model</groupId>
       <artifactId>model</artifactId>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>com.demo.todo.repository</groupId>
       <artifactId>repository</artifactId>
+      <scope>compile</scope>
     </dependency>
   </dependencies>
 

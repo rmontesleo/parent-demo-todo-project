@@ -28,10 +28,12 @@
     <dependency>
       <groupId>com.demo.todo.dto</groupId>
       <artifactId>dto</artifactId>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>com.demo.todo.service</groupId>
       <artifactId>service</artifactId>
+      <scope>compile</scope>
     </dependency>
 
 
