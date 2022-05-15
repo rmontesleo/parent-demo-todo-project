@@ -6,7 +6,7 @@ import com.demo.todo.dto.TodoDTO;
 import com.demo.todo.model.Todo;
 import com.demo.todo.repository.TodoRepository;
 
-import java.util.Arrays;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,9 +16,10 @@ public class TodoService {
 
     public TodoDTO createTodo( final PostTodoDTO postTodoDTO){
 
-        Todo todo = new Todo();
-        todo.setTitle(postTodoDTO.title() );
-        todo.setDescription( postTodoDTO.description() );
+        Todo todo = Todo.builder()
+                        .title( postTodoDTO.title() )
+                        .description( postTodoDTO.description() )
+                        .build();
         repository.save( todo );
 
         TodoDTO newTodo = new TodoDTO(
@@ -42,7 +43,5 @@ public class TodoService {
                 }).collect( Collectors.toList() );
 
     }
-
-
 
 }

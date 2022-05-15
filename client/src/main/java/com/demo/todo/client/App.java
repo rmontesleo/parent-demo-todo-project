@@ -5,6 +5,7 @@ import com.demo.todo.dto.PostTodoDTO;
 import com.demo.todo.dto.TodoDTO;
 
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * Hello world!
@@ -14,9 +15,18 @@ public class App
 {
     public static void main( String[] args ) {
 
-        System.out.println( "Hello World!" );
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println( "Type your the TODO data" );
         TodoController controller = new TodoController();
-        PostTodoDTO todo = new PostTodoDTO( "First todo", "using just JSE" );
+
+        System.out.print("Type the title: ");
+        final String title = scanner.nextLine();
+
+        System.out.print("Type the description: ");
+        final String description = scanner.nextLine();
+
+        PostTodoDTO todo = new PostTodoDTO( title, description);
         System.out.println( "the todo is " + todo );
 
         TodoDTO newTodo = controller.postTodo( todo );
@@ -26,5 +36,6 @@ public class App
         dtoList.stream().forEach( System.out::println );
 
         System.out.println("Ending..");
+        scanner.close();
     }
 }
