@@ -2,9 +2,9 @@ package com.demo.todo.repository;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Optional;
 
 public abstract class AbstractDao<I,K> {
 
@@ -15,15 +15,21 @@ public abstract class AbstractDao<I,K> {
     public Connection getConnection(){
         try{
             Connection connection = DriverManager.getConnection( URL, USER, PASSWORD );
-            System.out.println("Connection is "+ connection  );
             return  connection;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public void releaseConnection( Connection connection ){
-        //connection.map( connection1 -> )
+
+    public void releaseResources( ResultSet resultSet) {
+        if( resultSet !=null ){
+            try {
+                resultSet.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
     public abstract I save( I newItem );

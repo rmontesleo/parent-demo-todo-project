@@ -8,13 +8,13 @@ import com.demo.todo.repository.TodoRepository;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class TodoService {
 
     private final TodoRepository repository = new TodoRepository();
 
     public TodoDTO createTodo( final PostTodoDTO postTodoDTO){
-
 
         Todo todo = new Todo();
         todo.setTitle(postTodoDTO.title() );
@@ -31,8 +31,16 @@ public class TodoService {
     }
 
     public List<TodoDTO> getAllTodos(){
-        //return repository.findAll();
-        return Arrays.asList();
+        return repository.findAll().stream()
+                .map( todo ->{
+                    TodoDTO dto = new TodoDTO(
+                            todo.getTodoId(),
+                            todo.getTitle(),
+                            todo.getDescription()
+                            );
+                    return dto;
+                }).collect( Collectors.toList() );
+
     }
 
 

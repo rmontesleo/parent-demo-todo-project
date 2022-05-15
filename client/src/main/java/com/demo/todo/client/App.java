@@ -4,6 +4,8 @@ import com.demo.todo.controller.TodoController;
 import com.demo.todo.dto.PostTodoDTO;
 import com.demo.todo.dto.TodoDTO;
 
+import java.util.List;
+
 /**
  * Hello world!
  *
@@ -19,6 +21,9 @@ public class App
 
         TodoDTO newTodo = controller.postTodo( todo );
         System.out.println("The new todo is " + newTodo );
+
+        List<TodoDTO> dtoList = controller.fetchAllTodos();
+        dtoList.stream().forEach( System.out::println );
 
         System.out.println("Ending..");
     }
