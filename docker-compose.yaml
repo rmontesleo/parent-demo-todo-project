@@ -9,7 +9,7 @@ services:
       - "5432:5432"
     volumes:
       - ./scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
-      - spring-todoapi-postgres-db-volume:/var/lib/posgresql/data
+      - parent-demo-todo-db-volume:/var/lib/posgresql/data
 
     environment:
       - POSTGRES_USER=postgres_user
@@ -23,16 +23,16 @@ services:
     ports:
       - 9090:80
     volumes:
-      - spring-todoapi-postgres-pgadmin-volume:/var/lib/pgadmin
+      - parent-demo-todo-pgadmin-volume:/var/lib/pgadmin
     environment:
       - PGADMIN_DEFAULT_EMAIL=user@domain.com
       - PGADMIN_DEFAULT_PASSWORD=pgadminpassword
 
 volumes:
-  spring-todoapi-postgres-db-volume:
-  spring-todoapi-postgres-pgadmin-volume:
+  parent-demo-todo-db-volume:
+  parent-demo-todo-pgadmin-volume:
 
 
 networks:
   default:
-    name: spring-todoapi-postgres-network
+    name: parent-demo-todo-network
